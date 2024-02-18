@@ -7,7 +7,12 @@
 #include "../include/tugas1/navigator.hpp"
 
 
-Navigator::run() {
+Navigator::Navigator() : nh("~"), loop_rate(1), count(0), x(0), y(0), z(0), status("takeoff") {
+  drone_status_pub = nh.advertise<tugas1::DronePos>("/drone_status", 10);
+}
+
+
+void Navigator::run() {
   while (ros::ok() && count < 1000) {
     tugas1::DronePos msg;
     msg.x = x++;

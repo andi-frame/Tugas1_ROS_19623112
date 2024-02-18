@@ -142,11 +142,11 @@ include_directories(
 
 
 # navigatorNode
-add_executable(navigator_node src/navigatorNode.cpp)
+add_executable(navigator_node src/navigatorNode.cpp src/navigator.cpp)
 target_link_libraries(navigator_node ${catkin_LIBRARIES})
 
 # commanderNode
-add_executable(commander_node src/commanderNode.cpp)
+add_executable(commander_node src/commanderNode.cpp src/commander.cpp)
 target_link_libraries(commander_node ${catkin_LIBRARIES})
 
 

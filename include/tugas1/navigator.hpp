@@ -18,9 +18,7 @@ private:
   std::string status;
 
 public:
-  Navigator() : nh("~"), loop_rate(1), count(0), x(0), y(0), z(0), status("takeoff") {
-      drone_status_pub = nh.advertise<tugas1::DronePos>("/drone_status", 10);
-  }
+  Navigator();
 
   void run();
 };
